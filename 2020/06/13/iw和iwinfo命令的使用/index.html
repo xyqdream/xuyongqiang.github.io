@@ -71,7 +71,7 @@
 <link href="/xuyongqiang.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -87,11 +87,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="跬步千里">
-<meta property="og:url" content="https://xyqdream.github.io/xuyongqiang.github.io/index.html">
+<meta name="description" content="iw iw 是一种新的基于 nl80211 的用于无线设备的CLI配置实用程序。它支持最近已添加到内核所有新的驱动程序。采用无线扩展接口的旧工具iwconfig已被废弃，强烈建议切换到 iw 和 nl80211。  语法格式1234567891011121314151617181920212223242526272829303132333435363738# iw help    # 帮助# iw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iw命令的使用">
+<meta property="og:url" content="https://xyqdream.github.io/xuyongqiang.github.io/2020/06/13/iw%E5%92%8Ciwinfo%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="跬步千里">
+<meta property="og:description" content="iw iw 是一种新的基于 nl80211 的用于无线设备的CLI配置实用程序。它支持最近已添加到内核所有新的驱动程序。采用无线扩展接口的旧工具iwconfig已被废弃，强烈建议切换到 iw 和 nl80211。  语法格式1234567891011121314151617181920212223242526272829303132333435363738# iw help    # 帮助# iw">
+<meta property="article:published_time" content="2020-06-13T12:58:17.000Z">
+<meta property="article:modified_time" content="2020-06-13T13:50:54.437Z">
 <meta property="article:author" content="xuyongqiang">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://xyqdream.github.io/xuyongqiang.github.io/"/>
+  <link rel="canonical" href="https://xyqdream.github.io/xuyongqiang.github.io/2020/06/13/iw和iwinfo命令的使用/"/>
 
 
 
 
 
-  <title> 跬步千里 </title>
+  <title> iw命令的使用 | 跬步千里 </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,9 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,133 +239,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xyqdream.github.io/xuyongqiang.github.io/xuyongqiang.github.io/2020/06/13/virtualbox-%E4%BF%AE%E6%94%B9-%E8%99%9A%E6%8B%9F%E7%A1%AC%E7%9B%98uuid/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xuyongqiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/xuyongqiang.github.io/images/001-head.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="跬步千里">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/xuyongqiang.github.io/2020/06/13/virtualbox-%E4%BF%AE%E6%94%B9-%E8%99%9A%E6%8B%9F%E7%A1%AC%E7%9B%98uuid/" itemprop="url">
-                  virtualbox 修改 虚拟硬盘uuid
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-13T22:13:21+08:00">
-                2020-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><pre><code>当复制了一个虚拟硬盘之后,即使修改名字也无法直接注册到硬盘列表,....提示为UUID已经被使用.</code></pre><h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><ol>
-<li>VBoxManage internalcommands sethduuid ***.vdi  （linux mac）</li>
-<li>进入vbox安装文件夹中 运行 .\VBoxManage internalcommands sethduuid ***.vdi  </li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -392,10 +271,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/xuyongqiang.github.io/2020/06/13/iw%E5%92%8Ciwinfo%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">
-                  iw命令的使用
-                </a>
+                iw命令的使用
               
             
           </h1>
@@ -446,9 +322,7 @@
       
 
       
-        
-          
-            <h3 id="iw"><a href="#iw" class="headerlink" title="iw"></a>iw</h3><blockquote>
+        <h3 id="iw"><a href="#iw" class="headerlink" title="iw"></a>iw</h3><blockquote>
 <p>iw 是一种新的基于 nl80211 的用于无线设备的CLI配置实用程序。它支持最近已添加到内核所有新的驱动程序。采用无线扩展接口的旧工具iwconfig已被废弃，强烈建议切换到 iw 和 nl80211。</p>
 </blockquote>
 <h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iw help    # 帮助</span></span><br><span class="line"><span class="comment"># iw list    # 获得所有设备的功能，如带宽信息（2.4GHz，和5GHz），和802.11n的信息</span></span><br><span class="line"><span class="comment"># iw dev wlan0 scan    # 扫描</span></span><br><span class="line"><span class="comment"># iw event    # 监听事件 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 link    # 获得链路状态 </span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo    # 连接到已禁用加密的AP，这里它的SSID是foo </span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo 2432  # 假设你有两个AP SSID 都是 foo ，你知道你要连接的是在 2432 频道</span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo keys 0:abcde d:1:0011223344    # 连接到使用WEP的AP</span></span><br><span class="line"><span class="comment"># iw dev wlan1 station dump    # 获取station 的统计信息</span></span><br><span class="line"><span class="comment"># iw dev wlan1 station get     # 获得station对应的peer统计信息</span></span><br><span class="line"><span class="comment"># iw wlan0 set bitrates legacy-2.4 12 18 24    # 修改传输比特率 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-5 4    # 修改tx HT MCS的比特率 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-2.4 10  </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-5    # 清除所有 tx 比特率和设置的东西来恢复正常</span></span><br><span class="line"><span class="comment"># iw dev  set txpower  []   #设置传输功率</span></span><br><span class="line"><span class="comment"># iw phy  set txpower  []   #设置传输功率</span></span><br><span class="line"><span class="comment"># iw dev wlan0 set power_save on  #设置省电模式</span></span><br><span class="line"><span class="comment"># iw dev wlan0 get power_save  #查询当前的节电设定</span></span><br><span class="line"><span class="comment"># iw phy phy0 interface add moni0 type monitor  #添加一个 monitor 接口</span></span><br><span class="line"><span class="comment"># iw help    # 帮助</span></span><br><span class="line"><span class="comment"># iw list    # 获得所有设备的功能，如带宽信息（2.4GHz，和5GHz），和802.11n的信息</span></span><br><span class="line"><span class="comment"># iw dev wlan0 scan    # 扫描</span></span><br><span class="line"><span class="comment"># iw event    # 监听事件 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 link    # 获得链路状态 </span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo    # 连接到已禁用加密的AP，这里它的SSID是foo </span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo 2432  # 假设你有两个AP SSID 都是 foo ，你知道你要连接的是在 2432 频道</span></span><br><span class="line"><span class="comment"># iw wlan0 connect foo keys 0:abcde d:1:0011223344    # 连接到使用WEP的AP</span></span><br><span class="line"><span class="comment"># iw dev wlan1 station dump    # 获取station 的统计信息</span></span><br><span class="line"><span class="comment"># iw dev wlan1 station get     # 获得station对应的peer统计信息</span></span><br><span class="line"><span class="comment"># iw wlan0 set bitrates legacy-2.4 12 18 24    # 修改传输比特率 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-5 4    # 修改tx HT MCS的比特率 </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-2.4 10  </span></span><br><span class="line"><span class="comment"># iw dev wlan0 set bitrates mcs-5    # 清除所有 tx 比特率和设置的东西来恢复正常</span></span><br><span class="line"><span class="comment"># iw dev  set txpower  []   #设置传输功率</span></span><br><span class="line"><span class="comment"># iw phy  set txpower  []   #设置传输功率</span></span><br><span class="line"><span class="comment"># iw dev wlan0 set power_save on  #设置省电模式</span></span><br><span class="line"><span class="comment"># iw dev wlan0 get power_save  #查询当前的节电设定</span></span><br><span class="line"><span class="comment"># iw phy phy0 interface add moni0 type monitor  #添加一个 monitor 接口</span></span><br></pre></td></tr></table></figure>
@@ -456,175 +330,76 @@
 <p>如果只要mac地址</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iw dev wlan0 station dump | grep Station </span><br><span class="line">Station e0:ac:cb:b1:ca:ba (on wlan0)</span><br><span class="line">Station 04:52:f3:87:cf:77 (on wlan0)</span><br><span class="line">Station 94:94:26:9f:cc:fa (on wlan0)</span><br><span class="line">Station b0:d5:9d:61:3a:1a (on wlan0)</span><br><span class="line">Station a8:1b:5a:b7:e0:03 (on)890449</span><br></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xyqdream.github.io/xuyongqiang.github.io/xuyongqiang.github.io/2020/06/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xuyongqiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/xuyongqiang.github.io/images/001-head.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="跬步千里">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/xuyongqiang.github.io/2020/06/11/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-11T15:47:30+08:00">
-                2020-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/xuyongqiang.github.io/tags/linux/" rel="tag"># linux</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/xuyongqiang.github.io/2020/06/11/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/xuyongqiang.github.io/2020/06/13/virtualbox-%E4%BF%AE%E6%94%B9-%E8%99%9A%E6%8B%9F%E7%A1%AC%E7%9B%98uuid/" rel="prev" title="virtualbox 修改 虚拟硬盘uuid">
+                virtualbox 修改 虚拟硬盘uuid <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -632,6 +407,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -651,8 +430,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/xuyongqiang.github.io/images/001-head.png"
@@ -705,6 +493,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iw"><span class="nav-number">1.</span> <span class="nav-text">iw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-number">2.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.</span> <span class="nav-text">示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -812,6 +616,10 @@
   
 
   
+  <script type="text/javascript" src="/xuyongqiang.github.io/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/xuyongqiang.github.io/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
